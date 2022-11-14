@@ -1,4 +1,8 @@
 # garbage_destroyer
+
+[![Garbage destroyer](https://github.com/Lnvictor/garbage_destroyer/actions/workflows/python-app.yml/badge.svg)](https://github.com/Lnvictor/garbage_destroyer/actions/workflows/python-app.yml)
+
+
 Garbage destroyer is a project made for cleaning old files in a specif directory, that is specified by the user.
 The app is a scheduled job, the job recurrency is also parametrized.
 
