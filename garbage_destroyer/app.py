@@ -1,12 +1,19 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
+import glob
 import os
-from datetime import datetime, timedelta
+from datetime import datetime
 
-from settings import config
+from apscheduler.schedulers.blocking import BlockingScheduler
+from garbage_destroyer.settings import config
 
 
 def clean():
-    for item in os.scandir(config['Cleaning']['dir']):
+    file_extension = config['Cleaning'].get('file_extension')
+    path = f"{config['Cleaning']['dir']}/*"
+
+    if file_extension:
+        path += f'.{file_extension}'
+
+    for item in glob.glob(path):
         last_access = datetime.fromtimestamp(os.path.getatime(item))
         delta = datetime.now() - last_access
         
