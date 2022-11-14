@@ -13,4 +13,4 @@ def glob_mock(mocker):
 
 @pytest.fixture
 def config_mock(mocker):
-    yield mocker.patch('garbage_destroyer.settings.config')
+    yield mocker.patch('garbage_destroyer.app.config')

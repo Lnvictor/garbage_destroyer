@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "garbage_destroyer"
-version = "0.3.0"
+version = "0.3.2"
 description = "Project destinated to clean old files for a specif directory"
 authors = ["Lnvictor <lnvictor@github.com>"]
 
