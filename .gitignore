@@ -133,3 +133,6 @@ config.ini
 
 # vscode config folder
 .vscode/
+
+# pycharm config folder
+.idea/
