@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from garbage_destroyer.app import clean
+from garbage_destroyer.clean import clean
 
 
 def test_should_clean_files_with_extension(os_mock, glob_mock, config_mock):
@@ -11,7 +11,7 @@ def test_should_clean_files_with_extension(os_mock, glob_mock, config_mock):
     os_mock.path.getatime.return_value = (datetime.now() - timedelta(days=5)).timestamp()
     os_mock.path.isfile.return_value = True
     os_mock.remove.return_value = True
-    clean()
+    clean(time_diff=1, ext='jpg', dir='/Users/victorpereira/Downloads')
 
     os_mock.remove.assert_called()
     glob_mock.assert_called()
