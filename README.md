@@ -20,7 +20,8 @@ Or, if your want just use pip, you can run:
     pip install -r requirements.txt
 ```
 
-Then you need create a config file called **config.ini** in project root, in order to add some required settings to run the application:
+## Running as a Scheduled job
+You need create a config file called **config.ini** in project root, in order to add some required settings to run the application:
 
 - Config sections:
     -  Scheduler: Config for scheduling the applcation running times, for example:
@@ -33,12 +34,32 @@ Then you need create a config file called **config.ini** in project root, in ord
         ```
     With this configuration, the application will be scheduled to run every day and every hour at the minute 0.
 
+    - Cleaning: This one is for cleaning parameters:
+
+        ```ini
+        [Cleaning]
+            dir=/Users/victorpereira/Downloads
+            time_diff_in_days=1
+            file_extension=jpg
+        ```
 ---
 
 ## How to run
 ```python
     python app.py
 ```
+
+## How to run as cli application
+run the following commands
+```python
+chmod +x setup.sh
+./setup.sh
+```
+Then, you can run
+```sh
+./gds --help
+```
+
 Have fun :octopus:
 
 ---
